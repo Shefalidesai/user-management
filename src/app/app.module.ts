@@ -14,7 +14,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserDialogComponent } from './add-user-dialog/add-user-dialog.component'; // Import this
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
@@ -36,11 +36,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatDialogModule,
+    MatDialogModule, 
+    MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule,
     MatFormFieldModule, // Make sure it's imported
     MatInputModule, // Make sure it's imported
     MatButtonModule,

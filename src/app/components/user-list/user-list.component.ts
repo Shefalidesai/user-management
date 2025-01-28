@@ -27,14 +27,17 @@ export class UserListComponent implements OnInit {
     this.dataSource = this.userService.getUsers();
   }
 
-  openAddUserDialog(): void {
+    // Open the dialog for adding or editing a user
+  openDialog(user?: User): void {
     const dialogRef = this.dialog.open(AddUserDialogComponent, {
-      width: '300px',
+      width: '80%',
+      maxWidth: '600px',
+      data: user // Pass user data if editing an existing user
     });
 
+    // After the dialog is closed, refresh the user list if any changes were made
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.addUser(result);
         this.dataSource = this.userService.getUsers(); // Refresh the list of users
       }
     });

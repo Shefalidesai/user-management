@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 
@@ -14,25 +14,33 @@ export class AddUserDialogComponent {
   constructor(
     private dialogRef: MatDialogRef<AddUserDialogComponent>,
     private fb: FormBuilder,
+    @Inject(MAT_DIALOG_DATA) public data: any, // Inject data if passed to the dialog
     private userService: UserService
   ) {
     this.userForm = this.fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      role: ['', [Validators.required]]
+      name: [data ? data.name : '', [Validators.required]],
+      email: [data ? data.email : '', [Validators.required, Validators.email]],
+      role: [data ? data.role : '', [Validators.required]]
     });
   }
 
-  // Function to save user
-  onSubmit(): void {
-    if (this.userForm.valid) {
-      this.userService.addUser(this.userForm.value);
-      this.dialogRef.close(true); // Close the dialog and return a truthy value
-    }
+  // Close the dialog without saving
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
-  // Function to close the dialog without saving
-  onCancel(): void {
-    this.dialogRef.close(); // Close dialog without saving
+  // Submit form and add user
+  onSubmit(): void {
+    if (this.userForm.valid) {
+      const user = this.userForm.value;
+      if (this.data) {
+        // If editing, update user
+        this.userService.updateUser(user);
+      } else {
+        // If adding, save new user
+        this.userService.addUser(user);
+      }
+      this.dialogRef.close(true); // Close the dialog and return true
+    }
   }
 }
