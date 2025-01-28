@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
@@ -35,14 +36,13 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule, 
     MatSelectModule,
     MatButtonModule,
-    BrowserAnimationsModule,
     MatDialogModule, 
     MatButtonModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatFormFieldModule, // Make sure it's imported
-    MatInputModule, // Make sure it's imported
+    MatFormFieldModule, 
+    MatInputModule, 
     MatButtonModule,
     MatIconModule,
     FormsModule,

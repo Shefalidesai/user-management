@@ -25,10 +25,10 @@ export class UserService {
   // Update user details
   updateUser(updatedUser: User): void {
     const users = this.getUsers();
-    const index = users.findIndex(user => user.email === updatedUser.email);
+    const index = users.findIndex(user => user.email === updatedUser.email); // Use unique identifier like email to find user
     if (index !== -1) {
-      users[index] = updatedUser;
-      localStorage.setItem(this.usersKey, JSON.stringify(users));
+      users[index] = updatedUser; // Replace the existing user with the updated one
+      localStorage.setItem(this.usersKey, JSON.stringify(users)); // Save the updated list back to localStorage
     }
   }
 

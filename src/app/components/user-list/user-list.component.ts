@@ -46,16 +46,17 @@ export class UserListComponent implements OnInit {
   editUser(user: User): void {
     const dialogRef = this.dialog.open(AddUserDialogComponent, {
       width: '300px',
-      data: user
+      data: user // Pass the current user data for editing
     });
-
+  
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.userService.updateUser(result);
-        this.dataSource = this.userService.getUsers(); // Refresh the list of users
+        this.userService.updateUser(result); // Update the user in the service
+        this.dataSource = this.userService.getUsers(); // Refresh the user list from the service
       }
     });
   }
+  
 
   deleteUser(user: User): void {
     if (confirm(`Are you sure you want to delete ${user.name}?`)) {
