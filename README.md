@@ -1,5 +1,3 @@
-Sure! Here is the exact **README.md** structure, ready for you to copy-paste directly into your project:
-
 ```markdown
 # User Management System - Angular 14
 
