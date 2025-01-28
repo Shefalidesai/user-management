@@ -1,0 +1,26 @@
+/* Container styling */
+.user-management-container {
+  padding: 16px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Form container */
+.form-container {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 16px;
+}
+
+/* Buttons */
+button {
+  margin-right: 8px;
+}
