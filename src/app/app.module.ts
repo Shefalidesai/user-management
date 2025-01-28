@@ -4,9 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './components/user-list/user-list.component';
-import { AddUserComponent } from './components/add-user/add-user.component';
-import { EditUserComponent } from './components/edit-user/edit-user.component';
-import { DeleteUserComponent } from './components/delete-user/delete-user.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
@@ -19,13 +16,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserDialogComponent } from './add-user-dialog/add-user-dialog.component'; // Import this
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
-    AddUserComponent,
-    EditUserComponent,
-    DeleteUserComponent,
     AddUserDialogComponent
   ],
   imports: [
