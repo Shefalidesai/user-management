@@ -186,4 +186,3 @@ If you run into issues while building or serving the project, here are some thin
 3. **Dependencies**: Make sure all dependencies are installed by running `npm install`.
 
 Let me know if you need help with anything else!
-```
