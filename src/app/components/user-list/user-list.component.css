@@ -1,20 +1,141 @@
-/* user-list.component.css */
+/* Main container for the entire user list */
+.user-list-container {
+  padding: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
 
+/* Title styling for user management */
 .project-title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 3rem; /* Adjusted margin */
 }
 
 .project-title h1 {
-  padding: 1rem;
   font-size: 2rem;
-  font-weight: bold;
-  color: #000000; /* Material Blue color */
+  margin: 1rem;
 }
 
-.user-list-container {
-  padding: 2rem;
+/* Mat icon styling */
+mat-icon {
+  font-size: 1.5rem; /* Size of the icon */
+  color: #757575; /* Icon color */
+  cursor: pointer;
 }
+
+/* Search bar and Add button layout */
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  gap: 0.5rem;
+}
+
+/* Adjustments for better visual alignment */
+.mat-form-field {
+  flex-grow: 1; /* Takes up remaining space */
+  margin-right: 1rem; /* Space between search and add button */
+  max-width: 70%; /* Control width of the search input */
+}
+
+button.mat-raised-button {
+  max-width: 200px; /* Button width */
+  width: auto; /* Adjust the width automatically */
+}
+
+/* Styling for the search button */
+.search-btn {
+  height: 56px; /* Same height as mat-form-field */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #1976d2; /* Change color on hover */
+}
+
+/* Table styling */
 table {
   width: 100%;
+  border-collapse: collapse;
+}
+
+mat-header-cell, mat-cell {
+  padding: 1rem;
+  text-align: left;
+}
+
+mat-header-cell {
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+
+mat-icon {
+  color: #3f51b5;
+}
+
+button.mat-icon-button {
+  margin-right: 0.5rem;
+}
+
+/* Pagination styling */
+mat-paginator {
+  margin-top: 2rem;
+}
+
+/* Styling for pagination controls */
+mat-paginator .mat-paginator-page-size {
+  margin-right: 1rem;
+}
+
+mat-paginator .mat-paginator-range-label {
+  font-size: 1.2rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  button.mat-raised-button {
+    width: 100%;
+  }
+
+  .user-list-container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .project-title {
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .user-list-container {
+    padding: 1rem;
+  }
 }

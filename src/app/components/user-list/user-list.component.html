@@ -2,9 +2,18 @@
   <h1>User Management System</h1>
 </div>
 
-<div class="user-list-container">
-  <button mat-raised-button color="primary" (click)="openDialog()">Add User</button>
+<div class="search-container">
+  <mat-form-field>
+   
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput [(ngModel)]="searchTerm" (input)="applySearch()" placeholder="Search">
+    
+  </mat-form-field>
 
+  <button mat-raised-button color="primary" (click)="openDialog()">Add User</button>
+</div>
+
+<div class="user-list-container">
   <table mat-table [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
@@ -37,5 +46,5 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator [pageSize]="pageSize" [length]="dataSource.length" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5,10,20]" [length]="dataSource.data.length" showFirstLastButtons></mat-paginator>
 </div>

@@ -27,12 +27,13 @@ export class UserService {
 
   updateUser(updatedUser: User): void {
     const users = this.getUsers();
-    const index = users.findIndex((user) => user.id === updatedUser.id);
+    const index = users.findIndex(user => user.email === updatedUser.email); // Identify the user by email
     if (index !== -1) {
-      users[index] = updatedUser;
-      localStorage.setItem(this.storageKey, JSON.stringify(users));
+      users[index] = updatedUser; // Replace the old user data with the updated user
+      localStorage.setItem(this.storageKey, JSON.stringify(users)); // Update the data in localStorage
     }
   }
+  
 
   deleteUser(userId: number): void {
     const users = this.getUsers().filter((user) => user.id !== userId);

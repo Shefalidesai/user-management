@@ -33,18 +33,17 @@ export class AddUserDialogComponent {
   // Submit form and either update or add the user
   onSubmit(): void {
     if (this.userForm.valid) {
-      const user: User = this.userForm.value;
+      const user = this.userForm.value;
       if (this.data) {
-        // If editing, update the existing user
+        console.log(this.data, user);
+        // If editing, update user
         this.userService.updateUser(user);
       } else {
-        // If adding, save the new user
+        // If adding, save new user
         this.userService.addUser(user);
       }
-      this.dialogRef.close(user); // Return the updated or new user data when closing
-    } else {
-      // Optionally, handle form invalid scenario (e.g., show a validation error message)
-      console.error('Form is invalid');
+      this.dialogRef.close(user); // Close the dialog and return the updated user
     }
   }
+  
 }

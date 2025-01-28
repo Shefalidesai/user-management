@@ -32,23 +32,12 @@ import { MatIconModule } from '@angular/material/icon';
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
-    MatInputModule, 
-    FormsModule, 
-    MatSelectModule,
-    MatButtonModule,
-    MatDialogModule, 
-    MatButtonModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatButtonModule,
+    MatInputModule,
+    MatDialogModule,
     MatIconModule,
+    MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
-    
-    
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
