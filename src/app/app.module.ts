@@ -13,7 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddUserDialogComponent } from './add-user-dialog/add-user-dialog.component'; // Import this
+import { AddUserDialogComponent } from './add-user-dialog/add-user-dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 
